@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꾸 웹개발 커미션</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;700&display=swap');
+        *{
+            font-family: 'Noto Sans KR';
+        }
+        .main{
+            width: 700px;
+            padding: 24px;
+            margin: auto;
+        }
+        .header{
+            font-size: 24px;
+            font-weight: 700;
+            grid-column: 1/3;
+            border-bottom: 1px solid rgb(228, 228, 228);
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+        }
+        .left{
+            width: 100%;
+        }
+        .right{
+            width: 100%;
+            color: black;
+            margin: 12px;
+            position: relative;
+        }
+        .btn_ctn{
+            width: 100%;
+            height: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            position: sticky;
+            top: 0px;
+            margin: 48px 0;
+        }
+        .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(245, 245, 245);
+            border: 1px solid rgb(228, 228, 228);
+            border-left: none;
+            border-bottom: 1px solid black;
+            color: rgb(119, 119, 119);
+        }
+        .btn1{
+            border-left: 1px solid rgb(228, 228, 228);
+        }
+        .sel{
+            border: 1px solid black;
+            color: black;
+            border-bottom: none;
+            background-color: white;
+        }
+        .section{
+            border-bottom: 1px solid rgb(228, 228, 228);
+            padding-bottom: 48px;
+            margin-bottom: 48px;
+        }
+        p, h4{
+            margin: 6px 0;
+            min-height: 20px;
+            line-height: 1.6;
+        }
+        h3{
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        .tr:first-child{
+            border-top: 1px solid black;
+            height: 96px;
+            background-color: rgb(245, 245, 245);
+        }
+        .tr{
+            min-height: 48px;
+            border-bottom: 1px solid rgb(228, 228, 228);
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+        }
+        .tr div{
+            margin: auto;
+            font-size: 14px;
+            padding: 20px 12px;
+        }
+        .tr h3{
+            margin: 0;
+        }
+        .table{
+            border-bottom: 1px solid black;
+            margin-bottom: 12px;
+        }
+        .t{
+            font-size: 16px;
+        }
+        .tin{
+            height: 100%;
+        }
+        img{
+            width: 100%;
+        }
+        .icon{ 
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+        .icon.twitter { 
+            background-image: url(./twitter.svg); 
+            background-repeat: no-repeat; 
+        }
+        .icon.kakao { 
+            background-image: url(./kakao.svg); 
+            background-repeat: no-repeat; 
+        }
+        .icb{
+            background-color: rgb(245, 245, 245);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 20px;
+            right: 12px;
+        }
+        .icb:last-child{
+            bottom: 80px;
+        }
+        .bottom{
+            width: 400px;
+            margin: auto;
+            margin-bottom: 400px;
+            color: rgb(119, 119, 119);
+        }
+        button{
+            display: block;
+            margin: 12px auto;
+            background-color: rgb(251, 224, 67);
+            border: none;
+            font-size: 24px;
+            padding: 16px 36px;
+            font-weight: 700;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: rgb(251, 217, 67);
+        }
+        button:active{
+            background-color: rgb(255, 240, 158);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            꾸의 웹사이트 제작
+        </div>
+        <div class="left">
+            
+            <div>
+                
+                <img src="dkbd.png" alt="">
+                <p>생일, 이벤트용 퀴즈 사이트 제작해 드립니다.</p>
+                <button onclick="kko();">문의하기</button>
+            </div>
+            <div class="btn_ctn">
+                <div onclick="clicked(0);" class="btn btn1 sel">커미션 설명</div>
+                <div onclick="clicked(1);" class="btn">가격 정보</div>
+                <div onclick="clicked(2);" class="btn">수정</div>
+                <div onclick="clicked(3);" class="btn">취소·환불 규정</div>
+            </div>
+            <div class="section">
+                <h3>커미션 설명</h3>
+
+                <h4>STANDARD / 퀴즈 (69000원)</h4>
+                <p>- 퍼블리싱 : 디자인이 완료된 페이지의 파일을 제공해 주시면 맞춰 제작해 드립니다.</p>
+                <p>- 기본 퀴즈 사이트에서 디자인 변형만 가능, 기능 추가 불가능</p>
+                <p>- 기본 기능 : 이름 입력, 퀴즈 풀이, 점수 결과, 트위터 공유</p>
+                <p>- 반응형 (모바일 친화) 작업은 기본적인 수준으로만 진행됩니다.</p>
+                <p></p>
+                <h4>DELUXE / 맞춤 퀴즈 (129000원)</h4>
+                <p>- 퍼블리싱 : 디자인이 완료된 페이지의 파일을 제공해 주시면 맞춰 제작해 드립니다.</p>
+                <p>- 디자인 도움 : 테마와 색 컨셉에 맞추어 폰트, 레이아웃 설정 등을 도와드립니다.</p>
+                <p>- 기본 퀴즈 사이트에서 변형과 간단한 기능 추가 가능</p>
+                <p>- 기본 기능 : 이름 입력, 퀴즈 풀이, 점수 결과, 트위터 공유</p>
+                <p>- 추가 기능 : 입력 방식 변경, 다른 형식의 공유 기능</p>
+                <p>- 반응형 (모바일 친화) 작업은 기본적인 수준으로만 진행됩니다.</p>
+                <p></p>
+                <h4>PREMIUM / 맞춤 사이트 (179000원)</h4>
+                <p>- 퍼블리싱 : 디자인이 완료된 페이지의 파일을 제공해 주시면 맞춰 제작해 드립니다.</p>
+                <p>- 기본 퀴즈 사이트가 아닌 다른 포맷 가능</p>
+                <p>- 3 페이지 이상의 구성이 가능합니다.</p>
+                <p>- 반응형 (모바일 친화) 작업은 기본적인 수준으로만 진행됩니다.</p>
+                <p>- 추가 기능은 문의 바랍니다.</p>
+                <p></p>
+                <h4>포트폴리오</h4>
+                <p>- 도겸최애능력시험</p>
+                <a href="http://2022dkloverstest.com">2022dkloverstest.com</a>
+            </div>
+            <div class="section">
+                <h3>가격 정보</h3>
+                <p></p>
+                <div class="table">
+                    <div class="tr">
+                        <div></div>
+                        <div>
+                            <p class="t">STANDARD</p>
+                            <h3>69000원</h3>
+                        </div>
+                        <div>
+                            <p class="t">DELUXE</p>
+                            <h3>129000원</h3>
+                        </div>
+                        <div>
+                            <p class="t">PREMIUM</p>
+                            <h3>179000원</h3>
+                        </div>
+                    </div>
+                    <div class="tr">
+                        <div>설명</div>
+                        <div class="tin">
+                            <h4>퀴즈 기본</h4>
+                            <p></p>
+                            <p>고정 포맷의 퀴즈 사이트 제작 작업.</p>
+                        </div>
+                        <div class="tin">
+                            <h4>맞춤 퀴즈</h4>
+                            <p></p>
+                            <p>유동적 포맷의 퀴즈 사이트 제작 작업.</p>
+                        </div>
+                        <div class="tin">
+                            <h4>맞춤 사이트</h4>
+                            <p></p>
+                            <p>고정 포맷의 퀴즈 사이트 제작 작업.</p>
+                        </div>
+                    </div>
+                    <div class="tr">
+                        <div>포맷</div>
+                        <div>퀴즈 고정</div>
+                        <div>퀴즈 변형가능</div>
+                        <div>자유</div>
+                    </div>
+                    <div class="tr">
+                        <div>서버 관련 도움</div>
+                        <div>-</div>
+                        <div>O</div>
+                        <div>O</div>
+                    </div>
+                    <div class="tr">
+                        <div>기능 추가</div>
+                        <div>-</div>
+                        <div>O</div>
+                        <div>O</div>
+                    </div>
+                    <div class="tr">
+                        <div>디자인 도움</div>
+                        <div>-</div>
+                        <div>O</div>
+                        <div>O</div>
+                    </div>
+                    <div class="tr">
+                        <div>페이지 수</div>
+                        <div>단일 페이지</div>
+                        <div>단일 페이지</div>
+                        <div>3 페이지</div>
+                    </div>
+                    <div class="tr">
+                        <div>수정 횟수</div>
+                        <div>1회</div>
+                        <div>2회</div>
+                        <div>5회</div>
+                    </div>
+                    <div class="tr">
+                        <div>작업일</div>
+                        <div>2일</div>
+                        <div>5일</div>
+                        <div>14일</div>
+                    </div>
+                </div>
+                <p>- 서버, 도메인 비용은 별도입니다.</p>
+            </div>
+            <div class="section">
+                <h3>수정</h3>
+                <p>
+                    결과물 확인 후 하자 발생 시, 3일 이내에 수정이 가능합니다.
+                </p>
+                <p>
+                    결과물 확인 후 단순 변심에 의한 수정일 경우 추가 요금이 부과될 수 있습니다.
+                </p>
+            </div>
+            <div class="section">
+                <h3>취소·환불 규정</h3>
+                <p>
+                    1. 전문가와 의뢰인의 상호 협의하에 청약 철회 및 환불이 가능합니다.
+                </p>
+                <p>
+                    2. 작업이 완료된 이후 또는 자료, 프로그램 등 서비스가 제공된 이후에는 환불이 불가합니다.
+                </p>
+                <p></p>
+                <p>
+                    1. 서비스 진행 도중 의뢰인의 귀책사유로 인해 환불을 요청할 경우, 사용 금액을 아래와 같이 계산 후 총 금액의 10%를 공제하여 환불합니다.
+                </p>
+                <p>
+                    총 작업량의 1/3 경과 전 : 이미 납부한 요금의 2/3 해당액
+                </p>
+                <p>
+                    총 작업량의 1/2 경과 전 : 이미 납부한 요금의 1/2 해당액
+                </p>
+                <p>
+                    총 작업량의 1/2 경과 후 : 반환하지 않음
+                </p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="icb" onclick="twt();">
+                <div class="icon twitter"></div>
+            </div>
+            <div class="icb" onclick="kko();">
+                <div class="icon kakao"></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="bottom">
+        모든 문의는 @kkukku_website 로 부탁드립니다.
+    </div>
+    <script>
+        const menulist = document.getElementsByClassName("section");
+        var offsetlist = [];
+        var btnlist = document.getElementsByClassName("btn");
+        for(var i=0; i<menulist.length; i++){
+            offsetlist.push(menulist[i].offsetTop);
+        }
+
+        function fixedNav() {
+            if(offsetlist[3]<window.scrollY){
+                if(btnlist[0].classList.contains("sel")){
+                    btnlist[0].classList.remove("sel");
+                }
+                if(btnlist[1].classList.contains("sel")){
+                    btnlist[1].classList.remove("sel");
+                }
+                if(btnlist[2].classList.contains("sel")){
+                    btnlist[2].classList.remove("sel");
+                }
+                btnlist[3].classList.add("sel");
+            }else if(offsetlist[2]<window.scrollY){
+                if(btnlist[0].classList.contains("sel")){
+                    btnlist[0].classList.remove("sel");
+                }
+                if(btnlist[1].classList.contains("sel")){
+                    btnlist[1].classList.remove("sel");
+                }
+                if(btnlist[3].classList.contains("sel")){
+                    btnlist[3].classList.remove("sel");
+                }
+                btnlist[2].classList.add("sel");
+            }else if(offsetlist[1]<window.scrollY){
+                if(btnlist[0].classList.contains("sel")){
+                    btnlist[0].classList.remove("sel");
+                }
+                if(btnlist[3].classList.contains("sel")){
+                    btnlist[3].classList.remove("sel");
+                }
+                if(btnlist[2].classList.contains("sel")){
+                    btnlist[2].classList.remove("sel");
+                }
+                btnlist[1].classList.add("sel");
+            }else{
+                if(btnlist[3].classList.contains("sel")){
+                    btnlist[3].classList.remove("sel");
+                }
+                if(btnlist[1].classList.contains("sel")){
+                    btnlist[1].classList.remove("sel");
+                }
+                if(btnlist[2].classList.contains("sel")){
+                    btnlist[2].classList.remove("sel");
+                }
+                btnlist[0].classList.add("sel");
+            }
+        }
+
+        function clicked(num){
+            window.scrollTo(0,offsetlist[num] - 100);
+        }
+
+        function twt(){
+            location.href = "https://twitter.com/kkukku_website";
+        }
+        function kko(){
+            location.href = "https://open.kakao.com/o/sGwsNa1d";
+        }
+
+        window.addEventListener('scroll', fixedNav);
+    </script>
+</body>
+</html>
