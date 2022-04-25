@@ -6,7 +6,7 @@
 ---
 
 ![](./DemoImg.png)
-This is the sample image. [**Click here**](##Demo-scene-using-Scratch) to get more images.
+This is the sample image. [**Click here**](#Demo-scene-using-Scratch) to get more images.
 
 
 - Mouse cursor is the player. Main character image follows the cursor(bird).
